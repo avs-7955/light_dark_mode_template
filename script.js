@@ -29,13 +29,10 @@ function darkMode() {
 	textBox.style.backgroundColor = "rgb(255 255 255 / 50%)"
 	// Changing the toggle icon
 	toggleIcon.children[0].textContent = "Dark Mode"
-	toggleIcon.children[1].classList.remove("fa-sun")
-	toggleIcon.children[1].classList.add("fa-moon")
+	toggleIcon.children[1].classList.replace("fa-sun", "fa-moon")
 
 	// Changing the images
-	image_01.src = "img/undraw_proud_coder_dark.svg"
-	image_02.src = "img/undraw_feeling_proud_dark.svg"
-	image_03.src = "img/undraw_conceptual_idea_dark.svg"
+	imageThemeSwitch("dark")
 }
 
 // Light mode styles
@@ -44,11 +41,16 @@ function lightMode() {
 	textBox.style.backgroundColor = "rgb(0 0 0 / 50%)"
 	// Changing the toggle icon
 	toggleIcon.children[0].textContent = "Light Mode"
-	toggleIcon.children[1].classList.remove("fa-moon")
-	toggleIcon.children[1].classList.add("fa-sun")
+	toggleIcon.children[1].classList.replace("fa-moon", "fa-sun")
 
 	// Changing the images
-	image_01.src = "img/undraw_proud_coder_light.svg"
-	image_02.src = "img/undraw_feeling_proud_light.svg"
-	image_03.src = "img/undraw_conceptual_idea_light.svg"
+	imageThemeSwitch("light")
+}
+
+// Changing the images
+function imageThemeSwitch(color) {
+	// Changing the images
+	image_01.src = `img/undraw_proud_coder_${color}.svg`
+	image_02.src = `img/undraw_feeling_proud_${color}.svg`
+	image_03.src = `img/undraw_conceptual_idea_${color}.svg`
 }
