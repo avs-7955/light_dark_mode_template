@@ -54,3 +54,16 @@ function imageThemeSwitch(color) {
 	image_02.src = `img/undraw_feeling_proud_${color}.svg`
 	image_03.src = `img/undraw_conceptual_idea_${color}.svg`
 }
+
+// Detecting the system theme
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)")
+if (darkThemeMq.matches) {
+	// Theme set to dark.
+	console.log("Dark")
+	toggleSwitch.checked = true
+	document.documentElement.setAttribute("data-theme", "dark")
+	darkMode()
+} else {
+	console.log("Light")
+	// Theme set to light.
+}
